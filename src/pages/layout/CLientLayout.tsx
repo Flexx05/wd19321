@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import SearchComponent from "../../components/SearchComponent";
 
 function ClientLayout() {
   return (
@@ -41,6 +42,7 @@ function ClientLayout() {
                 </Link>
               </li>
             </ul>
+            <SearchComponent />
           </div>
         </div>
       </nav>

@@ -1,22 +1,10 @@
 {
   "products": [
     {
-      "id": "3",
-      "title": "IPhone 16",
-      "description": "Iphone16 is officially announced on April 2024.",
-      "price": 480,
-      "discountPercentage": 20.91,
-      "rating": 5,
-      "stock": 300,
-      "brand": "Apple",
-      "category": "smartphones",
-      "thumbnail": "https://cdn.hoanghamobile.com/Uploads/2024/09/10/iphone-16-pro-sa-mac-1.png;trim.threshold=80;trim.percentpadding=0.5;width=180;height=180;mode=pad;paddingWidth=5;"
-    },
-    {
       "id": "4",
-      "title": "OPPO F19",
+      "title": "OPPO F19 update",
       "description": "OPPO F19 is officially announced on April 2021.",
-      "price": 280,
+      "price": "300",
       "discountPercentage": 17.91,
       "rating": 4.3,
       "stock": 123,

@@ -1,51 +1,40 @@
+import { useForm } from "react-hook-form";
 import { ProductInput } from "../../interface/product";
+import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios, { AxiosError } from "axios";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-// const productInit: ProductInput = {
-//   title: "",
-//   thumbnail: "",
-//   price: 0,
-//   category: "smartphones",
-//   description: "",
-// };
-
-function Add() {
-  // const [product, setProduct] = useState<ProductInput>(productInit);
-
-  // const handleChangeInput = (
-  //   e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  //   key: string
-  // ) => {
-  //   setProduct((prev: ProductInput) => {
-  //     return {
-  //       ...prev,
-  //       [key]: e.target.value,
-  //     };
-  //   });
-  // };
-
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   try {
-  //     await axios.post("http://localhost:3000/products", product);
-  //     toast.success("Adding product success");
-  //   } catch (error) {
-  //     toast.error((error as AxiosError).message);
-  //   }
-  // };
+function Edit() {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<ProductInput>();
   const nav = useNavigate();
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (id) {
+      const getProductById = async () => {
+        try {
+          const { data } = await axios.get(
+            `http://localhost:3000/products/${id}`
+          );
+          reset(data);
+        } catch (error) {
+          toast.error((error as AxiosError).message);
+        }
+      };
+      getProductById();
+    }
+  }, [id]);
+
   const onSubmit = async (data: ProductInput) => {
     try {
-      await axios.post("http://localhost:3000/products", data);
-      toast.success("Adding product success");
+      await axios.put(`http://localhost:3000/products/${id}`, data);
+      toast.success("Cập nhật thành công");
       nav("/admin/product");
     } catch (error) {
       toast.error((error as AxiosError).message);
@@ -53,7 +42,7 @@ function Add() {
   };
   return (
     <div>
-      <h1>Product Add</h1>
+      <h1>Edit</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group row">
           <label htmlFor="title" className="col-sm-1-12 col-form-label">
@@ -174,4 +163,4 @@ function Add() {
   );
 }
 
-export default Add;
+export default Edit;

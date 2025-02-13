@@ -2,6 +2,7 @@ import { useState } from "react";
 import IProduct from "../interface/product";
 import toast from "react-hot-toast";
 import axios, { AxiosError } from "axios";
+import { Search } from "lucide-react";
 
 interface SearchComponentProps {
   onProductSelect: (product: IProduct) => void;
@@ -55,9 +56,11 @@ function SearchComponent({ onProductSelect }: SearchComponentProps) {
           placeholder="Search"
           aria-label="Search"
         />
-        <button className="btn btn-outline-light" type="submit">
-          Search
-        </button>
+        <Search
+          className="bg-light text-danger p-2 rounded-2"
+          width={50}
+          height={50}
+        />
       </form>
     </div>
   );

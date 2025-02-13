@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import IProduct from "../../interface/product";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 function List() {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -17,31 +18,62 @@ function List() {
     };
     getProducts();
   }, []);
+
+  const handleDelete = async (id: string) => {
+    if (window.confirm("Bạn chắc chắn xóa chứ?")) {
+      try {
+        await axios.delete(`http://localhost:3000/products/${id}`);
+        toast.success("Xóa sản phẩm thành công");
+        setProducts((prev: IProduct[]) => {
+          return prev.filter((item) => {
+            return item.id !== id;
+          });
+        });
+      } catch (error) {
+        toast.error((error as AxiosError).message);
+      }
+    }
+  };
   return (
     <div>
-      <table className="table">
+      <h1>List Products</h1>
+      <Link className="btn btn-primary" to={`add`}>
+        Add
+      </Link>
+      <table className="table table-hover">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>STT</th>
             <th>Title</th>
             <th>Thumbnail</th>
             <th>Price</th>
+            <th>Category</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => {
+          {products?.map((product: IProduct, index: number) => {
             return (
               <tr key={product.id}>
-                <td scope="row">{product.id}</td>
+                <td scope="row">{index + 1}</td>
                 <td>{product.title}</td>
                 <td>
                   <img src={product.thumbnail} width={100} />
                 </td>
                 <td>${product.price}</td>
+                <td>{product.category.toLocaleUpperCase()}</td>
                 <td>
-                  <button className="btn btn-warning">Edit</button>
-                  <button className="btn btn-danger">Remove</button>
+                  <Link to={`edit/${product.id}`} className="btn btn-warning">
+                    Edit
+                  </Link>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => {
+                      handleDelete(product.id);
+                    }}
+                  >
+                    Remove
+                  </button>
                 </td>
               </tr>
             );
