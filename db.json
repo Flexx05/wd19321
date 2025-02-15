@@ -1,10 +1,22 @@
 {
   "products": [
     {
+      "id": "3",
+      "title": "IPhone 16",
+      "description": "Iphone16 is officially announced on April 2024.",
+      "price": 480,
+      "discountPercentage": 20.91,
+      "rating": 5,
+      "stock": 300,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://cdn.hoanghamobile.com/Uploads/2024/09/10/iphone-16-pro-sa-mac-1.png;trim.threshold=80;trim.percentpadding=0.5;width=180;height=180;mode=pad;paddingWidth=5;"
+    },
+    {
       "id": "4",
-      "title": "OPPO F19 update",
+      "title": "OPPOF19",
       "description": "OPPO F19 is officially announced on April 2021.",
-      "price": "300",
+      "price": 280,
       "discountPercentage": 17.91,
       "rating": 4.3,
       "stock": 123,
@@ -33,19 +45,19 @@
       "rating": 4.57,
       "stock": 83,
       "brand": "Apple",
-      "category": "laptops",
+      "category": "smartphones",
       "thumbnail": "https://cdn.hoanghamobile.com/i/previewV2/Uploads/2021/10/19/sliver-macbook-2021-1.png"
     },
     {
       "id": "7",
-      "title": "Samsung Galaxy Book",
+      "title": "Samsung Galaxy Book udpate",
       "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
-      "price": 1499,
+      "price": "1500",
       "discountPercentage": 4.15,
       "rating": 4.25,
       "stock": 50,
       "brand": "Samsung",
-      "category": "laptops",
+      "category": "smartphones",
       "thumbnail": "https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2024/09/25/galaxy-tab-s10-plus-moonstone-blue-product-image-combo.png"
     },
     {
@@ -323,46 +335,24 @@
       "brand": "Golden",
       "category": "home-decoration",
       "thumbnail": "https://cdn.hoanghamobile.com/Uploads/2024/08/14/bluetooth-sounarc-p2.png;trim.threshold=80;trim.percentpadding=0.5;width=240;height=240;mode=pad;paddingWidth=5;"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "courseName": "JS Cơ bản",
+      "views": 20,
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Javascript.jpg",
+      "note": "none",
+      "category": "Javascript"
     },
     {
-      "id": "219d",
-      "title": "Colocation",
-      "thumbnail": "https://cdn0.fahasa.com/media/catalog/product/9/7/9781408855652_1.jpg",
-      "price": 6512,
-      "category": "fragrances",
-      "description": "jdhhawbdahwjdnawd"
-    },
-    {
-      "id": "53f6",
-      "title": "Colocation",
-      "thumbnail": "https://cdn0.fahasa.com/media/catalog/product/9/7/9781408855652_1.jpg",
-      "price": 6512,
-      "category": "fragrances",
-      "description": "jdhhawbdahwjdnawd"
-    },
-    {
-      "id": "ef31",
-      "title": "Colocation",
-      "thumbnail": "https://cdn0.fahasa.com/media/catalog/product/9/7/9781408855652_1.jpg",
-      "price": 12321,
-      "category": "smartphones",
-      "description": "261ndjkwnaw"
-    },
-    {
-      "id": "fe46",
-      "title": "Colocation",
-      "description": "261ndjkwnaw",
-      "price": "12321",
-      "thumbnail": "https://cdn0.fahasa.com/media/catalog/product/9/7/9781408855652_1.jpg",
-      "category": "smartphones"
-    },
-    {
-      "id": "e4a3",
-      "title": "Colocation",
-      "description": "261ndjkwnaw",
-      "price": "12321",
-      "thumbnail": "https://cdn0.fahasa.com/media/catalog/product/9/7/9781408855652_1.jpg",
-      "category": "home-decoration"
+      "id": "2",
+      "courseName": "PHP Cơ bản update",
+      "views": 29,
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTef5lOqn3-0aRjvM19iJy-lAknXy3vSH1OfA&s",
+      "note": "none",
+      "category": "PHP"
     }
   ]
 }
