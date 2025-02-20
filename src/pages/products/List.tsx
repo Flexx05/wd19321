@@ -3,6 +3,7 @@ import IProduct from "../../interface/product";
 import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import instance from "../../config/axiosConfig";
 
 function List() {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -22,7 +23,7 @@ function List() {
   const handleDelete = async (id: string) => {
     if (window.confirm("Bạn chắc chắn xóa chứ?")) {
       try {
-        await axios.delete(`http://localhost:3000/products/${id}`);
+        await instance.delete(`/products/${id}`);
         toast.success("Xóa sản phẩm thành công");
         setProducts((prev: IProduct[]) => {
           return prev.filter((item) => {

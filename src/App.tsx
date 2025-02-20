@@ -11,6 +11,9 @@ import Edit from "./pages/products/Edit";
 import ListCourse from "./pages/courses/ListCourse";
 import AddCourse from "./pages/courses/AddCourse";
 import EditCourse from "./pages/courses/EditCourse";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import ListUser from "./pages/user/ListUser";
 
 function App() {
   return (
@@ -22,6 +25,8 @@ function App() {
           <Route path="product/:id" element={<ProductDetail />} />
           <Route path="news" element={<h1>Tin tức</h1>} />
           <Route path="contact" element={<h1>Liên hệ</h1>} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>
@@ -32,6 +37,8 @@ function App() {
           <Route path="course" element={<ListCourse />} />
           <Route path="course/add" element={<AddCourse />} />
           <Route path="course/edit/:id" element={<EditCourse />} />
+
+          <Route path="user" element={<ListUser />} />
         </Route>
         <Route path="*" element={<h1>Not found</h1>} />
       </Routes>
